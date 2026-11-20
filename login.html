@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login — Amira Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css" />
+    <script src="login.js" defer></script>
+  </head>
+  <body>
+    <section class="login-screen" id="login-screen">
+      <div class="login-card">
+        <a class="admin-brand" href="index.html" aria-label="Kembali ke portofolio">
+          <span class="brand-mark">AS</span>
+          <span><strong>Amira</strong><small>PORTFOLIO ADMIN</small></span>
+        </a>
+        <div class="login-heading">
+          <p>HALAMAN ADMIN</p>
+          <h1>Selamat datang kembali</h1>
+          <span>Masuk untuk mengelola portofolio kamu.</span>
+        </div>
+        <form id="login-form">
+          <label for="email">Email</label>
+          <input id="email" type="email" value="admin@amira.com" autocomplete="username" required />
+          <label for="password">Kata sandi</label>
+          <div class="password-field">
+            <input id="password" type="password" value="admin123" autocomplete="current-password" required />
+            <button type="button" id="toggle-password" aria-label="Tampilkan kata sandi">Tampilkan</button>
+          </div>
+          <p class="login-error" id="login-error" role="alert"></p>
+          <button class="login-button" type="submit">Masuk ke dashboard <span>→</span></button>
+        </form>
+        <a class="back-link" href="index.html">← Kembali ke portofolio</a>
+      </div>
+      <div class="login-art" aria-hidden="true">
+        <div class="art-grid"></div>
+        <div class="art-orbit orbit-a"></div>
+        <div class="art-orbit orbit-b"></div>
+        <div class="art-badge"><span>✦</span><strong>Kelola dengan mudah</strong><small>Konten tetap rapi dan teratur</small></div>
+      </div>
+    </section>
+  </body>
+</html>

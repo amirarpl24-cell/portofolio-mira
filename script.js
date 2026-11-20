@@ -25,3 +25,36 @@ navLinks.addEventListener("click", (event) => {
 });
 
 document.querySelector("#year").textContent = new Date().getFullYear();
+
+const writingPublicDialog = document.querySelector("#writing-public-dialog");
+const writingPublicOpen = document.querySelector(".karya-tulis-open");
+
+function loadPublishedWriting() {
+  const writing = JSON.parse(localStorage.getItem("amiraWriting") || "null");
+  if (!writing) return;
+
+  document.querySelector("#karya-tulis .project-name h3").textContent = writing.title || "Karya Tulis";
+  document.querySelector("#karya-tulis-summary").textContent =
+    (writing.body || "Ringkasan gagasan dan pembahasan yang disusun dalam bentuk tulisan")
+      .replace(/\s+/g, " ")
+      .slice(0, 110);
+  document.querySelector("#writing-public-title").textContent = writing.title || "Karya Tulis";
+  document.querySelector("#writing-public-body").innerHTML =
+    (writing.body || "Belum ada isi karya tulis.")
+      .split(/\n+/)
+      .map((paragraph) => `<p>${escapeHtmlForPublic(paragraph)}</p>`)
+      .join("");
+}
+
+function escapeHtmlForPublic(value) {
+  const element = document.createElement("div");
+  element.textContent = value;
+  return element.innerHTML;
+}
+
+if (writingPublicDialog && writingPublicOpen) {
+  writingPublicOpen.addEventListener("click", () => writingPublicDialog.showModal());
+  document.querySelector("#writing-public-close").addEventListener("click", () => writingPublicDialog.close());
+}
+
+loadPublishedWriting();

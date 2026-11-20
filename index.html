@@ -42,6 +42,7 @@
           <a href="#tentang">Tentang</a>
           <a href="#perjalanan">Perjalanan</a>
           <a href="#karya">Karya</a>
+          <a href="login.html">Admin</a>
           <a class="nav-cta" href="#karya">Lihat karya saya <span>↗</span></a>
         </div>
       </nav>
@@ -271,6 +272,15 @@
               <span class="project-type">GAGASAN LATIHAN</span>
               <span class="project-arrow" aria-hidden="true"></span>
             </article>
+            <article class="project-row karya-tulis-row" id="karya-tulis">
+              <span class="project-number">05</span>
+              <div class="project-name">
+                <h3>Karya Tulis</h3>
+                <p id="karya-tulis-summary">Ringkasan gagasan dan pembahasan yang disusun dalam bentuk tulisan</p>
+              </div>
+              <span class="project-type">KARYA TULIS</span>
+              <button class="project-arrow karya-tulis-open" type="button" aria-label="Baca karya tulis">↗</button>
+            </article>
           </div>
           <p class="work-footnote"><span>✳</span> Setiap proyek dan langkah kecil memberi saya pengalaman serta membawa saya lebih dekat pada tujuan.</p>
         </div>
@@ -306,5 +316,13 @@
         <span>© <span id="year"></span> AMIRA SYAFIRA</span>
       </div>
     </footer>
+    <dialog class="writing-public-dialog" id="writing-public-dialog">
+      <article class="writing-public-content">
+        <button type="button" class="writing-public-close" id="writing-public-close" aria-label="Tutup">×</button>
+        <p class="eyebrow">KARYA TULIS</p>
+        <h2 id="writing-public-title">Karya Tulis</h2>
+        <div id="writing-public-body"></div>
+      </article>
+    </dialog>
   </body>
 </html>
